@@ -1,22 +1,36 @@
 import t from "./theme";
+import { Container } from "./Container";
+import { ProgressBar } from "./ProgressBar";
 
 export const theme = t;
 
 <Head>
-  <title>React Native for Android Developers</title>
+  <title>React Native for Android Devs</title>
 </Head>
+
+<Footer>
+
+<ProgressBar />
+
+</Footer>
+
+<Container>
 
 # First slide
 
 Hey y'all, this is my first slide!
 
+</Container>
+
 <Notes>- these are my speaker notes for the first slide</Notes>
 
 ---
 
+<Container>
+
 # Slide two
 
-This is the second slide!
+This is the second slide! I'm trying to write something extremely long to see if maxWidth works, and how. It looks like my monitor is ultra-wide, so let's try to write some more.
 
 <Steps>
 
@@ -27,6 +41,8 @@ This is the second slide!
 - time
 
 </Steps>
+
+</Container>
 
 <Notes>
 
@@ -42,6 +58,10 @@ This is the second slide!
 
 ---
 
+<Container>
+
 # Slide three
 
 Hey I'm the last slide!
+
+</Container>
