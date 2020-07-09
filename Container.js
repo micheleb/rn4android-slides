@@ -6,7 +6,7 @@ const Styled = styled.div`
   display: flex;
   flex-direction: column;
   padding: 8vh 5vw;
-  width: 80vw;
+  width: 80%;
   height: 95%;
   border-radius: 20px;
   background-color: ${({ theme }) => theme.colors.background};

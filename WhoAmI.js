@@ -7,16 +7,16 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   background-color: ${({ theme }) => theme.colors.background};
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   z-index: 2;
 `;
 
 const Pic = styled.div`
   background-image: url('${whoami}');
   background-size: cover;
-  height: 100vh;
-  width: 60vw;
+  height: 100%;
+  width: 60%;
 `;
 
 const Right = styled.div`
