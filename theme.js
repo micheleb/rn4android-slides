@@ -28,5 +28,8 @@ export default {
       color: "primary",
       fontSize: "84px",
     },
+    li: {
+      marginBottom: "1.1em",
+    },
   },
 };
