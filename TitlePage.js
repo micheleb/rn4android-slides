@@ -27,7 +27,7 @@ const TopTitle = styled.div`
   font-size: 140px;
   font-weight: 500;
   text-align: center;
-  margin-bottom: 104px;
+  margin-bottom: 86px;
 `;
 
 const Logo = styled.img`
