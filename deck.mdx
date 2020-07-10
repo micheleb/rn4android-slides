@@ -1,8 +1,14 @@
 import t from "./theme";
+import { Col } from "./Col";
 import { Container } from "./Container";
+import { FullScreenImg } from "./FullScreenImg";
+import { Img } from "./Img";
 import { ProgressBar } from "./ProgressBar";
 import { TitlePage } from "./TitlePage";
+import { TwoCols } from "./TwoCols";
 import { WhoAmI } from "./WhoAmI";
+import elephant from "./assets/elephant.jpg";
+import pingu from "./assets/pingu.jpg";
 
 export const theme = t;
 
@@ -30,6 +36,7 @@ export const theme = t;
 - Co-founder at SketchTogether.com
 - Backend Dev turned FullStack
 - Slacker at dist0rtion.com (that's a zero)
+- 95.90.245.241
 
 </Steps>
 
@@ -39,9 +46,17 @@ export const theme = t;
 
 <Container>
 
-# First slide
+# Who are you
 
-Hey y'all, this is my first slide!
+<Steps>
+
+Maybe an Android Developer
+
+Maybe someone who knows about Android Development
+
+Definitely someone who wants to know about React Native
+
+</Steps>
 
 </Container>
 
@@ -51,17 +66,14 @@ Hey y'all, this is my first slide!
 
 <Container>
 
-# Slide two
-
-This is the second slide! I'm trying to write something extremely long to see if maxWidth works, and how. It looks like my monitor is ultra-wide, so let's try to write some more.
+# Why
 
 <Steps>
 
-- These will appear
-- One
-- at
-- the
-- time
+- Most (or the loudest) RN devs come from React/JS
+- native side seen as last resort (it isn't!)
+- RN (and React) are very unopinionated
+- Boy, do I have opinions
 
 </Steps>
 
@@ -69,13 +81,7 @@ This is the second slide! I'm trying to write something extremely long to see if
 
 <Notes>
 
-- and these are the notes
-
-- for the second slide!
-
-- what if I keep adding these?
-
-- does the window resize automatically?
+- RN stands for React Native
 
 </Notes>
 
@@ -83,8 +89,96 @@ This is the second slide! I'm trying to write something extremely long to see if
 
 <Container>
 
-# Slide three
+# What
 
-Hey I'm the last slide!
+<TwoCols>
+  
+<Col>
+
+1. Intro to React Native
+
+2. Brief intro to React
+
+3. Typescript
+
+4. A bit more about React Native
+
+</Col>
+
+<Col>
+
+5. RN Libraries and frameworks
+
+6. React Native gotchas
+
+7. React Native pros &amp; cons
+
+</Col>
+
+</TwoCols>
+
+</Container>
+
+---
+
+<Container>
+
+# React Native
+
+<Steps>
+
+- A framework to build <u>native</u> apps in React
+
+- Android and iOS, but also web, TVs, Windows, and OSX ( <Img src={pingu} height={50} inline /> )
+
+- Write once, wait for Gradle and Xcode to build forever 😬
+
+- Declarative UI (vs Imperative)
+
+</Steps>
+
+</Container>
+
+<Notes>
+
+- Linux => react-native-desktop-qt, but no big company behind it
+
+- it does take a long time to build from scratch, but you don't do it that often
+
+</Notes>
+
+---
+
+<FullScreenImg src={elephant} attribution="Victor Zastolskiy" modified />
+
+<Notes>
+
+It's the GDG, of course everyone knows about Flutter
+
+</Notes>
+
+---
+
+<Container>
+
+# Flutter (and Xamarin, and Kotlin Native, and...)
+
+<Steps>
+
+Other cross-platform frameworks exist, each with their own merit
+
+It _really_ depends on your team (do you know Dart? Can you easily hire React Devs? How big is your team?)
+
+Fighting over frameworks is **fun** (you go ahead, though)
+
+</Steps>
+
+</Container>
+
+---
+
+<Container>
+
+# How does it work
 
 </Container>
