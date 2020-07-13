@@ -1,9 +1,12 @@
 import t from "./theme";
+import { ArrowRight } from "./ArrowRight";
 import { Col } from "./Col";
 import { Container } from "./Container";
 import { FullScreenImg } from "./FullScreenImg";
 import { Img } from "./Img";
+import { RoundedBox } from "./RoundedBox";
 import { ProgressBar } from "./ProgressBar";
+import { StepChart } from "./StepChart";
 import { TitlePage } from "./TitlePage";
 import { TwoCols } from "./TwoCols";
 import { WhoAmI } from "./WhoAmI";
@@ -29,6 +32,8 @@ export const theme = t;
 <WhoAmI>
 
 # Who am I
+
+Michele Bonazza
 
 <Steps>
 
@@ -60,7 +65,11 @@ Definitely someone who wants to know about React Native
 
 </Container>
 
-<Notes>- these are my speaker notes for the first slide</Notes>
+<Notes>
+
+We recently rebuilt our app from scratch in RN
+
+</Notes>
 
 ---
 
@@ -165,11 +174,13 @@ It's the GDG, of course everyone knows about Flutter
 
 <Steps>
 
-Other cross-platform frameworks exist, each with their own merit
+Other cross-platform frameworks exist, each with their own merits
 
 It _really_ depends on your team (do you know Dart? Can you easily hire React Devs? How big is your team?)
 
-Fighting over frameworks is **fun** (you go ahead, though)
+Fighting over frameworks is **fun** :tada: (you go ahead, though)
+
+More on this later
 
 </Steps>
 
@@ -180,5 +191,31 @@ Fighting over frameworks is **fun** (you go ahead, though)
 <Container>
 
 # How does it work
+
+<StepChart>
+
+<RoundedBox>
+  
+<p>React<br />(JS)</p>
+
+</RoundedBox>
+
+<ArrowRight>JSON</ArrowRight>
+
+<RoundedBox borderGradient={{ left: "#61dafb", right: "#43db86" }}>
+  Bridge
+</RoundedBox>
+
+<ArrowRight color="#43db86">????</ArrowRight>
+
+<RoundedBox borderColor="#43db86">Native Views</RoundedBox>
+
+</StepChart>
+
+</Container>
+
+---
+
+<Container>
 
 </Container>

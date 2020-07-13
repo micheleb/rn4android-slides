@@ -21,7 +21,7 @@ export default {
     },
     root: {
       fontSize: "28px",
-      lineHeight: 1.5,
+      lineHeight: 1.3,
     },
     h1: {
       textTransform: "uppercase",
@@ -29,7 +29,7 @@ export default {
       fontSize: "84px",
     },
     li: {
-      marginBottom: "1.1em",
+      marginBottom: "1.2em",
     },
   },
 };
