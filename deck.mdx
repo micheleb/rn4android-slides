@@ -1,5 +1,7 @@
-import t from "./theme";
+import { CodeSurfer } from "code-surfer";
+import t, { codeSurferTheme } from "./theme";
 import { ArrowRight } from "./ArrowRight";
+import { CenteredEmoji } from "./CenteredEmoji";
 import { Col } from "./Col";
 import { Container } from "./Container";
 import { FullScreenImg } from "./FullScreenImg";
@@ -47,6 +49,16 @@ Michele Bonazza
 
 </WhoAmI>
 
+<Notes>
+
+Our main app is a mobility aggregator (car/scooter/bike sharing, but also public transport, taxis, and recently trains)
+
+We recently rebuilt our main app from scratch in RN, it's in prod (on Android, soon on iOS)
+
+:heart: for python, but lately have been working with Java, Kotlin on the BE, RN and React on the client
+
+</Notes>
+
 ---
 
 <Container>
@@ -64,12 +76,6 @@ Definitely someone who wants to know about React Native
 </Steps>
 
 </Container>
-
-<Notes>
-
-We recently rebuilt our app from scratch in RN
-
-</Notes>
 
 ---
 
@@ -90,7 +96,7 @@ We recently rebuilt our app from scratch in RN
 
 <Notes>
 
-- RN stands for React Native
+RN stands for React Native
 
 </Notes>
 
@@ -128,6 +134,14 @@ We recently rebuilt our app from scratch in RN
 
 </Container>
 
+<Notes>
+
+Intros to RN and React are really brief, I want to focus on real-life development
+
+Most intros have you setup a regular project, so let's skip that
+
+</Notes>
+
 ---
 
 <Container>
@@ -150,9 +164,11 @@ We recently rebuilt our app from scratch in RN
 
 <Notes>
 
-- Linux => react-native-desktop-qt, but no big company behind it
+Linux => react-native-desktop-qt, but no big company behind it
 
-- it does take a long time to build from scratch, but you don't do it that often
+:stuck_out_tongue: it does take a long time to build from scratch, but you don't do it that often
+
+Declarative meaning that not only the components are specified declaratively (XML), but business logic, too.
 
 </Notes>
 
@@ -176,7 +192,7 @@ It's the GDG, of course everyone knows about Flutter
 
 Other cross-platform frameworks exist, each with their own merits
 
-It _really_ depends on your team (do you know Dart? Can you easily hire React Devs? How big is your team?)
+It _really_ depends on your team (do you know Dart? How big is your team? Will you have to hire? Can you easily hire React Devs?)
 
 Fighting over frameworks is **fun** :tada: (you go ahead, though)
 
@@ -213,6 +229,77 @@ More on this later
 </StepChart>
 
 </Container>
+
+---
+
+<Container>
+
+# Under the hood
+
+<CenteredEmoji>
+
+:eyes:
+
+</CenteredEmoji>
+
+</Container>
+
+---
+
+<Container>
+
+# React
+
+Note:
+
+<Steps>
+
+- if your team is large enough, _you might not need to learn it_ :shushing_face:
+
+- if it's _very_ large, you might be better off without RN, though :thinking_face:
+
+- it's good to know anyway!
+
+</Steps>
+
+</Container>
+
+<Notes>
+
+For solos, of course you need to know everything.
+
+For small teams, it depends: a few native devs who know about bridging + React devs orchestrating?
+
+For large teams, see AirBnB (but also, brownfield apps)
+
+</Notes>
+
+---
+
+<CodeSurfer theme={codeSurferTheme}>
+
+<!-- prettier-ignore-start -->
+```jsx title="React" subtitle="* not displayed here: 250MB of node_modules"
+import React from "react";
+
+export const HelloSomeone = (props) => (
+  <div>
+    Hello, {props.who}!
+  </div>
+);
+```
+
+```jsx title="React"
+import React from "react";
+import { HelloSomeone } from "./HelloSomeone";
+
+export const MyApp = () => (
+  <HelloSomeone who="world" />
+);
+```
+<!-- prettier-ignore-end -->
+
+</CodeSurfer>
 
 ---
 

@@ -1,4 +1,26 @@
+import { vsDark } from "@code-surfer/themes";
 import { themes } from "mdx-deck";
+
+export const codeSurferTheme = {
+  ...vsDark,
+  styles: {
+    ...vsDark.styles,
+    CodeSurfer: {
+      ...vsDark.styles.CodeSurfer,
+      title: {
+        fontFamily: '"Roboto Slab", serif',
+        fontSize: "64px",
+        letterSpacing: "4px",
+        textTransform: "uppercase",
+        color: "#61dafb",
+      },
+      subtitle: {
+        backgroundColor: "black",
+        zIndex: 3,
+      },
+    },
+  },
+};
 
 export default {
   ...themes.code,
@@ -27,6 +49,7 @@ export default {
       textTransform: "uppercase",
       color: "primary",
       fontSize: "84px",
+      letterSpacing: "4px",
     },
     li: {
       marginBottom: "1.2em",
