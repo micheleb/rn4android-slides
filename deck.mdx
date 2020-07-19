@@ -10,6 +10,7 @@ import { Img } from "./Img";
 import { ProgressBar } from "./ProgressBar";
 import { RoundedBox } from "./RoundedBox";
 import { StepChart } from "./StepChart";
+import { Thankyou } from "./Thankyou";
 import { TitlePage } from "./TitlePage";
 import { TwoCols } from "./TwoCols";
 import { WhoAmI } from "./WhoAmI";
@@ -89,7 +90,7 @@ Definitely someone who wants to know about React Native
 <Steps>
 
 - Most (or the loudest) RN devs come from React/JS
-- native side seen as last resort (it isn't!)
+- Native side seen as last resort (it isn't!)
 - RN (and React) are very unopinionated
 - Boy, do I have opinions
 
@@ -205,6 +206,12 @@ More on this later
 
 </Container>
 
+<Notes>
+
+Cordova, ionic framework, NativeScript
+
+</Notes>
+
 ---
 
 <Container>
@@ -243,11 +250,11 @@ Note:
 
 <Steps>
 
-- if your team is large enough, _you might not need to learn it_ :shushing_face:
+- If your team is large enough, _you might not need to learn it_ :shushing_face:
 
-- if it's _very_ large, you might be better off without RN, though :thinking_face:
+- If it's _very_ large, you might be better off without RN, though :thinking_face:
 
-- it's good to know anyway!
+- It's good to know anyway!
 
 </Steps>
 
@@ -492,13 +499,13 @@ MessageQueue.spy(true);
 
 <Steps>
 
-- a _typed_ superset of JS that compiles to JS
+- A _typed_ superset of JS that compiles to JS
 
-- you can have JS coexist with TS: types are _optional_
+- You can have JS coexist with TS: types are _optional_
 
-- being an Android Dev, you know they really shouldn't be :face_with_monocle:
+- Being an Android Dev, you know they really shouldn't be :face_with_monocle:
 
-- it's very smart!
+- It's very smart!
 
 </Steps>
 
@@ -729,7 +736,7 @@ const printPlus: PrintSum & PrintConcat =
 ```diff 6[11:26,36:50]
 ```
 
-```diff 1[18:30,33:46],3[21:33,36:49],6[11:26,36:50]
+```diff 1[25:30,41:46],3[28:33,44:49],6[11:26,36:50]
 ```
 
 ```ts 1:8 title="Intersection types"
@@ -817,7 +824,7 @@ const [id, progressiveId, delivered] = product;
 
 # More on this
 
-<Centered fontSize="64px">
+<Centered fontSize="84px">
 
 <a href="https://www.youtube.com/watch?v=wD5WGkOEJRs" target="_blank">
   Busy TypeScript Developer’s Guide to Advanced TypeScript | Ted Neward
@@ -829,6 +836,204 @@ const [id, progressiveId, delivered] = product;
 
 ---
 
-# INTERSECTION TYPES f1 = (a: string, b: number), f2 = (a: number, b: string), f: f1 & f2 => f(2, 2) error
+<Container>
 
-# TUPLES [string, number]
+# RN Libs and Frameworks
+
+<Steps>
+
+- Navigation :sweat_smile: (<a href="https://reactnavigation.org/" target="_blank">react-navigation</a> vs <a href="https://github.com/wix/react-native-navigation" target="_blank">react-native-navigation</a>)
+
+- Animations (<a href="https://github.com/software-mansion/react-native-reanimated" target="_blank">react-native-reanimated</a>) and Gestures (<a href="https://github.com/software-mansion/react-native-gesture-handler" target="_blank">react-native-gesture-handler</a>) => don't miss <a href="https://www.youtube.com/c/wcandillon/playlists" target="_blank">Can it be done in React Native?</a>!
+
+- Firebase (<a href="https://rnfirebase.io/" target="_blank">react-native-firebase</a>) and Maps (<a href="https://github.com/react-native-community/react-native-maps" target="_blank">react-native-maps</a>)
+
+- Live updates (<a href="https://github.com/microsoft/react-native-code-push" target="_blank">Code Push</a>)
+
+- RN utils (<a href="https://github.com/hectahertz/react-native-typography" target="_blank">react-native-typography</a>, <a href="https://github.com/oblador/react-native-vector-icons" target="_blank">react-native-vector-icons</a>, <a href="https://github.com/react-native-community/react-native-svg" target="_blank">react-native-svg</a>) and JS utils (<a href="https://github.com/fnando/i18n-js" target="_blank">i18n-js</a>, <a href="https://github.com/date-fns/date-fns" target="_blank">date-fns</a>, <a href="https://github.com/lodash/lodash" target="_blank">lodash</a>, <a href="https://github.com/adamwdraper/Numeral-js" target="_blank">numeral</a>, ...)
+
+</Steps>
+
+</Container>
+
+---
+
+<Container>
+
+# Life of a RN developer
+
+<Steps>
+
+- Building for RN inevitably means using many 3rd party libs
+
+- Quality and mainteners responsiveness vary **a lot**
+
+- Things break and you have to wait even to get your PRs approved!
+
+- ...or _do you?_ :smirk:
+
+</Steps>
+
+</Container>
+
+---
+
+<Container>
+
+# The hero npm doesn't deserve
+
+<Steps>
+
+Enter <a href="https://github.com/ds300/patch-package" target="_blank">patch-package</a> :rocket:
+
+Fix the bug directly inside the library's `node_modules` folder
+
+Run `npx patch-packge the-library-you-fixed`
+
+Now you have a `.patch` file that you can commit, and even share! :exploding_head:
+
+</Steps>
+
+</Container>
+
+<Notes>
+
+This is such a huge improvement over any other experience I've had (including gradle) that I wanted to discuss it separately
+
+</Notes>
+
+---
+
+<Container>
+
+# A few RN Gotchas
+
+<Steps>
+
+- Always double-check that there's only one running Metro Bundler
+
+- Emulator not connecting => `adb reverse tcp:8081 tcp:8081`
+
+- Circular dependencies do exist (declaration order matters!)
+
+- Changes to the native side require a full app re-launch
+
+- `yarn install` after checkout, `pod install` if on iOS
+
+</Steps>
+
+</Container>
+
+<Notes>
+
+As said, there's a lot of info not being captured on the official website
+
+This is meant to be a very brief collection of the issues you're most likely to encounter
+
+The goal is to help you think "hey, I've heard about this"
+
+</Notes>
+
+---
+
+<Container>
+
+# A few more RN Gotchas
+
+<Steps>
+
+- Check your 3rd party dependencies quite thoroughly
+
+- If you feel like a task is quickly done natively, go for it!
+
+- Use `React.memo()` and `PureComponent`
+
+- Keep an eye on the bridge :eyes:
+
+- Sometimes a `flexDirection: 'row'` goes a long way
+
+</Steps>
+
+</Container>
+
+<Notes>
+
+You don't need to do an audit, but do check how often the repo is updated, when it was last updated, how many open/closed PRs, whether issues get ignored
+
+</Notes>
+
+---
+
+<Container>
+
+# Final considerations
+
+<Steps>
+
+:+1: Knowing Android makes you special in the RN world :unicorn_face:
+
+:+1: RN actually gives you a chance to reuse your knowledge
+
+:-1: If you're new to React and TS, there is quite a lot to learn
+
+:shrug: ...but then again, you might not need it!
+
+:-1: A smaller core library means you'll have to shop often on GitHub
+
+</Steps>
+
+</Container>
+
+<Notes>
+
+Ironically, with Flutter you're more in the hands of Google: do you know Skia development?
+
+</Notes>
+
+---
+
+<Container>
+
+# Final considerations v2
+
+<Steps>
+
+:+1: You can create apps for iOS without touching Objective-C or Swift
+
+:+1: Hot-reload works out of the box
+
+:+1: Many dev tools borrowed from React
+
+:-1: It takes a while to get familiar with the dev process
+
+:-1: 3rd parties can change their APIs for no reason
+
+</Steps>
+
+</Container>
+
+---
+
+<Container>
+
+# Final considerations v2-final
+
+<Steps>
+
+:+1: If you know FlexBox, you know how to do layouts in RN
+
+:-1: ...but there are a few weird corner cases
+
+:+1: The tech is quite young, but it's been constantly improving
+
+:-1: New native tech will always take some time to be added
+
+:+1: ...but 3rd parties will race to get them done first
+
+</Steps>
+
+</Container>
+
+---
+
+<Thankyou />

@@ -6,6 +6,12 @@
   background-color: #000;
 }
 
+a,
 a:visited {
   color: #43db86;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
