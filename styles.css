@@ -1,0 +1,11 @@
+.cs-container {
+  z-index: 3;
+}
+
+.cs-subtitle {
+  background-color: #000;
+}
+
+a:visited {
+  color: #43db86;
+}

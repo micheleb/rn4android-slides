@@ -1,0 +1,15 @@
+diff --git a/node_modules/@mdx-deck/gatsby-plugin/src/deck.js b/node_modules/@mdx-deck/gatsby-plugin/src/deck.js
+index 863562d..98990cc 100644
+--- a/node_modules/@mdx-deck/gatsby-plugin/src/deck.js
++++ b/node_modules/@mdx-deck/gatsby-plugin/src/deck.js
+@@ -90,9 +90,9 @@ export default props => {
+     if (step < steps) {
+       setStep(n => n + 1)
+     } else {
+-      setIndex(n => n < slides.length - 1 ? n + 1 : n)
+       setStep(0)
+       setSteps(0)
++      setIndex(n => n < slides.length - 1 ? n + 1 : n)
+     }
+   }
+ 

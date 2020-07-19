@@ -1,19 +1,22 @@
-import { CodeSurfer } from "code-surfer";
+import { CodeSurfer, CodeSurferColumns, Step } from "code-surfer";
 import t, { codeSurferTheme } from "./theme";
 import { ArrowRight } from "./ArrowRight";
-import { CenteredEmoji } from "./CenteredEmoji";
+import { Centered } from "./Centered";
+import { Chart } from "./Chart";
 import { Col } from "./Col";
 import { Container } from "./Container";
 import { FullScreenImg } from "./FullScreenImg";
 import { Img } from "./Img";
-import { RoundedBox } from "./RoundedBox";
 import { ProgressBar } from "./ProgressBar";
+import { RoundedBox } from "./RoundedBox";
 import { StepChart } from "./StepChart";
 import { TitlePage } from "./TitlePage";
 import { TwoCols } from "./TwoCols";
 import { WhoAmI } from "./WhoAmI";
 import elephant from "./assets/elephant.jpg";
 import pingu from "./assets/pingu.jpg";
+import ts2365 from "./assets/ts2365.png";
+import "./styles.css";
 
 export const theme = t;
 
@@ -43,7 +46,7 @@ Michele Bonazza
 - Co-founder at SketchTogether.com
 - Backend Dev turned FullStack
 - Slacker at dist0rtion.com (that's a zero)
-- 95.90.245.241
+- 95.90.225.243
 
 </Steps>
 
@@ -114,9 +117,9 @@ RN stands for React Native
 
 2. Brief intro to React
 
-3. Typescript
+3. A bit more about React Native
 
-4. A bit more about React Native
+4. Typescript
 
 </Col>
 
@@ -156,7 +159,7 @@ Most intros have you setup a regular project, so let's skip that
 
 - Write once, wait for Gradle and Xcode to build forever 😬
 
-- Declarative UI (vs Imperative)
+- Declarative (vs Imperative)
 
 </Steps>
 
@@ -234,20 +237,6 @@ More on this later
 
 <Container>
 
-# Under the hood
-
-<CenteredEmoji>
-
-:eyes:
-
-</CenteredEmoji>
-
-</Container>
-
----
-
-<Container>
-
 # React
 
 Note:
@@ -305,4 +294,541 @@ export const MyApp = () => (
 
 <Container>
 
+# What is React anyway
+
+<StepChart>
+
+<RoundedBox>
+  
+JSX
+
+</RoundedBox>
+
+<ArrowRight>JS</ArrowRight>
+
+<RoundedBox>Layout tree</RoundedBox>
+
+<ArrowRight>????</ArrowRight>
+
+<RoundedBox>Rendering target</RoundedBox>
+
+</StepChart>
+
+A diff engine for trees :deciduous_tree:
+
 </Container>
+
+<Notes>
+
+You don't need to know any of this while developing a regular RN app!
+
+???? => calls that depend on the actual platform
+
+</Notes>
+
+---
+
+<CodeSurferColumns themes={[codeSurferTheme, codeSurferTheme]}>
+
+<Step>
+
+<!-- prettier-ignore-start -->
+```jsx title="React (JS)"
+import React from "react";
+
+
+export const HelloSomeone = (props) => (
+  <div>
+    Hello, {props.who}!
+  </div>
+);
+```
+
+```jsx title="React Native"
+import React from "react";
+import { Text, View } from "react-native";
+
+export const HelloSomeone = (props) => (
+  <View>
+    <Text>Hello, {props.who}!</Text>
+  </View>
+);
+```
+<!-- prettier-ignore-end -->
+
+</Step>
+
+<Step>
+
+<!-- prettier-ignore-start -->
+```jsx 5,7 title="React (JS)"
+import React from "react";
+
+
+export const HelloSomeone = (props) => (
+  <div>
+    Hello, {props.who}!
+  </div>
+);
+```
+
+```jsx 2,5,6[5:10,30:36],7 title="React Native"
+import React from "react";
+import { Text, View } from "react-native";
+
+export const HelloSomeone = (props) => (
+  <View>
+    <Text>Hello, {props.who}!</Text>
+  </View>
+);
+```
+<!-- prettier-ignore-end -->
+
+</Step>
+
+</CodeSurferColumns>
+
+---
+
+<Container>
+
+# React (in browsers)
+
+<Chart>
+
+<RoundedBox>
+  
+JSX
+
+</RoundedBox>
+
+<ArrowRight>JS</ArrowRight>
+
+<RoundedBox>Virtual DOM</RoundedBox>
+
+<ArrowRight>JS</ArrowRight>
+
+<RoundedBox>DOM</RoundedBox>
+
+</Chart>
+
+</Container>
+
+---
+
+<Container>
+
+# React Native
+
+<Chart>
+
+<RoundedBox>
+  
+JSX
+
+</RoundedBox>
+
+<ArrowRight>Bridge</ArrowRight>
+
+<RoundedBox borderColor="#43db86">Shadow tree</RoundedBox>
+
+<ArrowRight color="#43db86">Yoga</ArrowRight>
+
+<RoundedBox borderColor="#43db86">Native Views</RoundedBox>
+
+</Chart>
+
+</Container>
+
+<Notes>
+
+The bridge is the same we've seen on the previous slides
+
+Yoga is a cross-platform layout engine written in C that implements FlexBox
+
+</Notes>
+
+---
+
+<Container>
+
+# Under the hood:
+
+<Centered>
+
+:eyes:
+
+</Centered>
+
+<Notes>
+
+MessageQueue.spy(true);
+
+</Notes>
+
+</Container>
+
+---
+
+<Container>
+
+# More on this
+
+<Centered fontSize="84px">
+
+<a href="https://www.youtube.com/watch?v=8va9prUqjnA" target="_blank">
+  Emil Sjölander - React Native, The Native Bits
+</a>
+
+</Centered>
+
+</Container>
+
+---
+
+<Container>
+
+# Typescript
+
+<Steps>
+
+- a _typed_ superset of JS that compiles to JS
+
+- you can have JS coexist with TS: types are _optional_
+
+- being an Android Dev, you know they really shouldn't be :face_with_monocle:
+
+- it's very smart!
+
+</Steps>
+
+</Container>
+
+<Notes>
+
+Using TS is not needed, but it **will** make your life easier
+
+Use strict is life
+
+Combined with ES6, it reminds me of what Kotlin is to Java
+
+</Notes>
+
+---
+
+<!-- prettier-ignore-start -->
+
+<CodeSurfer theme={codeSurferTheme}>
+
+```ts title="Structural typing"
+interface Person {
+  name: string;
+}
+
+interface Animal {
+  name: string;
+}
+```
+
+```ts 9,10 title="Structural typing"
+interface Person {
+  name: string;
+}
+
+interface Animal {
+  name: string;
+}
+
+let me: Person = { name: "Michele", speak: () => 'hi!' };
+const horseman: Animal = { name: "Bojack" };
+```
+
+```ts 9:12 title="Structural typing"
+interface Person {
+  name: string;
+}
+
+interface Animal {
+  name: string;
+}
+
+let me: Person = { name: "Michele", speak: () => 'hi!' };
+const horseman: Animal = { name: "Bojack" };
+
+me = horseman; // 👍
+```
+
+```ts 1:8 title="Structural typing"
+interface Person {
+  name: string;
+  speak: () => string;
+}
+
+interface Animal {
+  name: string;
+}
+
+let me: Person = { name: "Michele", speak: () => 'hi!' };
+const horseman: Animal = { name: "Bojack" };
+```
+
+```ts 10:13 title="Structural typing"
+interface Person {
+  name: string;
+  speak: () => string;
+}
+
+interface Animal {
+  name: string;
+}
+
+let me: Person = { name: "Michele", speak: () => 'hi!' };
+const horseman: Animal = { name: "Bojack" };
+
+me = horseman; // 👎
+```
+
+</CodeSurfer>
+
+<!-- prettier-ignore-end -->
+
+<Notes>
+
+I'm not gonna teach you TS now, just a brief overview at what's in there for you that's not in other typed languages.
+
+</Notes>
+
+---
+
+<!-- prettier-ignore-start -->
+
+<CodeSurfer theme={codeSurferTheme}>
+
+```ts title="Union Types"
+interface Product {
+  id: string | number;
+  status: 'new' | 'ordered' | 'dispatched' | 'delivered';
+}
+
+const p: Product = { id: 'ED-209', status: 'new' };
+```
+
+```ts 2,7 title="Union Types"
+interface Product {
+  id: string | number;
+  status: 'new' | 'ordered' | 'dispatched' | 'delivered';
+}
+
+const p: Product = { id: 'ED-209', status: 'new' };
+p.id.length; // 👎
+```
+
+```diff 6[8:16]
+```
+
+```ts title="Union Types"
+interface Product {
+  id: string | number;
+  status: 'new' | 'ordered' | 'dispatched' | 'delivered';
+}
+
+const p: Product = { id: 'ED-209', status: 'new' };
+p.id.length; // 👎
+console.log(p.id + '3'); // 👍 => 'ED-2093'
+```
+
+```ts 8:9 title="Union Types"
+interface Product {
+  id: string | number;
+  status: 'new' | 'ordered' | 'dispatched' | 'delivered';
+}
+
+const p: Product = { id: 'ED-209', status: 'new' };
+p.id.length; // 👎
+console.log(p.id + '3'); // 👍 => 'ED-2093'
+console.log(p.id + 3); // 👎 
+```
+
+</CodeSurfer>
+
+<!-- prettier-ignore-end -->
+
+---
+
+<Container>
+
+<div
+  style={{
+    width: "100%",
+    height: 0,
+    paddingBottom: "54%",
+    position: "relative",
+  }}
+>
+  <iframe
+    src="https://giphy.com/embed/s239QJIh56sRW"
+    width="100%"
+    height="100%"
+    style={{ position: "absolute" }}
+    frameBorder="0"
+    class="giphy-embed"
+    allowFullScreen
+  ></iframe>
+</div>
+
+</Container>
+
+---
+
+<Container>
+
+# Strict types
+
+<Steps>
+
+<img src={ts2365} />
+
+`p.id` is defined as `string | number`
+
+```js
+'1' + '2' => '12'
+```
+
+```js
+1 + 2 => 3
+```
+
+</Steps>
+
+</Container>
+
+---
+
+<!-- prettier-ignore-start -->
+
+<CodeSurfer theme={codeSurferTheme}>
+
+```ts title="Intersection types"
+type PrintSum = (first: number, second: number) => void;
+
+type PrintConcat = (first: string, second: string) => void;
+```
+
+```ts 1:6 title="Intersection types"
+type PrintSum = (first: number, second: number) => void;
+
+type PrintConcat = (first: string, second: string) => void;
+
+const printPlus: PrintSum & PrintConcat =
+  (first: number | string, second: number | string) => null;
+```
+
+```diff 5[18:39]
+```
+
+```diff 6[11:26,36:50]
+```
+
+```diff 1[18:30,33:46],3[21:33,36:49],6[11:26,36:50]
+```
+
+```ts 1:8 title="Intersection types"
+type PrintSum = (first: number, second: number) => void;
+
+type PrintConcat = (first: string, second: string) => void;
+
+const printPlus: PrintSum & PrintConcat =
+  (first: number | string, second: number | string) => null;
+
+printPlus(1, 2); // 👍
+```
+
+```ts 1:9 title="Intersection types"
+type PrintSum = (first: number, second: number) => void;
+
+type PrintConcat = (first: string, second: string) => void;
+
+const printPlus: PrintSum & PrintConcat =
+  (first: number | string, second: number | string) => null;
+
+printPlus(1, 2); // 👍
+printPlus('a', 'b'); // 👍
+```
+
+```ts 1:10 title="Intersection types"
+type PrintSum = (first: number, second: number) => void;
+
+type PrintConcat = (first: string, second: string) => void;
+
+const printPlus: PrintSum & PrintConcat =
+  (first: number | string, second: number | string) => null;
+
+printPlus(1, 2); // 👍
+printPlus('a', 'b'); // 👍
+printPlus(1, 'a'); // 👎
+```
+
+</CodeSurfer>
+
+<!-- prettier-ignore-end -->
+
+---
+
+<!-- prettier-ignore-start -->
+
+<CodeSurfer theme={codeSurferTheme}>
+
+```ts title="Tuples"
+type Product = [string, number, boolean];
+```
+
+```ts 1:3 title="Tuples"
+type Product = [string, number, boolean];
+
+const product: Product = ['ED-209', 42, true];
+```
+
+```ts 1:5 title="Tuples"
+type Product = [string, number, boolean];
+
+const product: Product = ['ED-209', 42, true];
+
+const [id, progressiveId, delivered] = product;
+```
+
+```ts 1:9 title="Tuples"
+type Product = [string, number, boolean];
+
+const product: Product = ['ED-209', 42, true];
+
+const [id, progressiveId, delivered] = product;
+
+// id is a string
+// progressiveId is a number
+// delivered is a boolean
+```
+</CodeSurfer>
+
+<!-- prettier-ignore-end -->
+
+---
+
+<Container>
+
+# More on this
+
+<Centered fontSize="64px">
+
+<a href="https://www.youtube.com/watch?v=wD5WGkOEJRs" target="_blank">
+  Busy TypeScript Developer’s Guide to Advanced TypeScript | Ted Neward
+</a>
+
+</Centered>
+
+</Container>
+
+---
+
+# INTERSECTION TYPES f1 = (a: string, b: number), f2 = (a: number, b: string), f: f1 & f2 => f(2, 2) error
+
+# TUPLES [string, number]

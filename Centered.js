@@ -7,8 +7,10 @@ const Styled = styled.div`
   height: 70%;
   align-items: center;
   justify-content: center;
-  font-size: 128px;
+  font-size: ${({ fontSize }) => fontSize};
   text-align: center;
 `;
 
-export const CenteredEmoji = ({ children }) => <Styled>{children}</Styled>;
+export const Centered = ({ children, fontSize }) => (
+  <Styled fontSize={fontSize || "128px"}>{children}</Styled>
+);

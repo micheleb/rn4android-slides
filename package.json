@@ -11,7 +11,9 @@
     "build": "mdx-deck build deck.mdx"
   },
   "devDependencies": {
-    "mdx-deck": "^4.1.1"
+    "mdx-deck": "^4.1.1",
+    "patch-package": "^6.2.2",
+    "postinstall-postinstall": "^2.1.0"
   },
   "dependencies": {
     "@code-surfer/themes": "^3.1.1",
