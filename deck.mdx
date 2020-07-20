@@ -550,6 +550,9 @@ let me: Person = { name: "Michele", speak: () => 'hi!' };
 const horseman: Animal = { name: "Bojack" };
 ```
 
+```diff 1:3,9[37:55]
+```
+
 ```ts 9:12 title="Structural typing"
 interface Person {
   name: string;
@@ -868,7 +871,7 @@ const [id, progressiveId, delivered] = product;
 
 - Quality and maintainers responsiveness vary **a lot**
 
-- Things break and you have to wait even to get your PRs approved!
+- Things break and you have to wait just to get your PRs approved!
 
 - ...or _do you?_ :smirk:
 
@@ -910,11 +913,11 @@ This is such a huge improvement over any other experience I've had (including gr
 
 <Steps>
 
-- Always double-check that there's only one running Metro Bundler
+- Always double-check that there's only **one** running Metro Bundler
 
 - Emulator not connecting => `adb reverse tcp:8081 tcp:8081`
 
-- Circular dependencies do exist (declaration order matters!)
+- Circular dependencies do exist (declaration order does matter!)
 
 - Changes to the native side require a full app re-launch
 
