@@ -33,6 +33,10 @@ const ThankYouRow = styled.div`
   font-size: 132px;
 `;
 
+const Social = styled.div`
+  line-height: 1.5;
+`;
+
 export const Thankyou = () => {
   const { theme } = useThemeUI();
   return (
@@ -42,12 +46,26 @@ export const Thankyou = () => {
       </Left>
       <Right>
         <ThankYouRow>Thank you!</ThankYouRow>
-        <a href="https://github.com/micheleb" target="_blank">
-          micheleb
-        </a>
-        <a href="https://twitter.com/micheluzzo" target="_blank">
-          @micheluzzo
-        </a>
+        <Social>
+          <i class="fab social fa-github"></i>
+          <a
+            href="https://github.com/micheleb"
+            target="_blank"
+            rel="noreferrer"
+          >
+            micheleb
+          </a>
+        </Social>
+        <Social>
+          <i class="fab social fa-twitter"></i>
+          <a
+            href="https://twitter.com/micheluzzo"
+            target="_blank"
+            rel="noreferrer"
+          >
+            @micheluzzo
+          </a>
+        </Social>
       </Right>
     </Wrapper>
   );

@@ -15,3 +15,9 @@ a:visited {
 a:hover {
   text-decoration: underline;
 }
+
+.fab.social {
+  color: #43db86;
+  display: inline;
+  margin-right: 10px;
+}
