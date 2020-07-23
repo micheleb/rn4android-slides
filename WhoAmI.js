@@ -22,7 +22,7 @@ const Pic = styled.div`
 const Right = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 100px;
+  padding: 4vw;
 `;
 
 export const WhoAmI = (props) => {
