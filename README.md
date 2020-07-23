@@ -2,7 +2,7 @@
 
 An introduction to React Native for Android Developers. Presented via Twitch at GDG Cosenza on July 22nd 2020.
 
-## View the slides
+## View the slides - work in progress
 
 Head over to [this page](https://micheleb.github.io/rn4android-slides/) and use left/right (or page up / page down) arrow keys to navigate.
 
